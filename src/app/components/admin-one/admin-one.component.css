@@ -1,0 +1,50 @@
+.upper-padding {
+    padding-top: 4em;
+}
+
+.social-sides {
+    font-size: 3em;
+     color: black;
+     padding-right: 0.4em;
+     padding-top: 0.5em;
+}
+
+.social-sides:hover {
+    color: grey;
+}
+
+.left-margin {
+    margin-left: 2%;
+}
+
+.blog-link a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-blog-link {
+    margin-top: 1em;
+}
+
+.side-blog-link:hover .side-blog-title {
+    font-size: 24px;
+}
+
+.footer-blog-link:hover .footer-blog-title {
+    font-size: 24px;
+}
+
+.footer-blog-title, .side-blog-title {
+    color: grey;
+}
+
+.footer-blog-content, .side-blog-content {
+    text-decoration: none;
+}
+
+.footer-blog-background {
+    background-color: #F5F5F5;
+    color:black;
+}
+
+

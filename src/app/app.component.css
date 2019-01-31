@@ -1,0 +1,66 @@
+.colorred {
+    color: red;
+}
+
+.footer-padding {
+    padding-top: 2em;
+}
+
+.footer-head {
+    background-color: #6351ce;
+}
+
+.social-sides {
+    font-size: 2em;
+     color: white;
+     padding-left: 0.4em;
+     padding-top: 0.5em;
+}
+
+.social-sides:hover {
+    color: red;
+}
+
+.social-message {
+    color: white;
+}
+
+.footer-last {
+    background-color: black;
+    color: white;
+}
+
+.footer-lines {
+    width: 60px;
+}
+
+.footer-long-lines {
+    width: 165px;
+}
+
+.footer-logo {
+    font-size: 30px;
+}
+
+.footer-link a {
+     color: white;
+}
+
+.footer-link a:hover {
+     font-size: 20px;
+     text-decoration: none;
+ }
+
+ .footer-developer {
+     padding-bottom: 1em;
+     text-decoration: none;
+ }
+
+ .footer-developer a {
+     color: white;
+ }
+
+ .footer-developer a:hover {
+     text-decoration: none;
+     font-size: 20px;
+ }

@@ -1,0 +1,15 @@
+<div class="upper-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8" *ngFor='let details of blogAdminAll | slice:0:10; let odd = odd; let even = even;'>
+          <div [ngClass]="{ greybc: odd, bluebc: even }">
+            <h3 class="cntr">{{details.title}}</h3>
+            <p class="cntr">{{details.content | limitTo: 200}}<span (click)="blogread(details)">Read More</span></p>
+            <p class="lft">{{details.tags}}</p>
+            <p class="lft">{{details.author}}</p>
+            <p class="lft">{{details.aboutAuthor}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
