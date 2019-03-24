@@ -13,6 +13,7 @@ import { TruncatePipe } from './pipes/truncatePipe';
 import { AdminViewComponent } from './components/admin-view/admin-view.component';
 import { AdminOneComponent } from './components/admin-one/admin-one.component';
 import { AdminEditComponent } from './components/admin-edit/admin-edit.component';
+import { ViewStreamComponent } from './components/view-stream/view-stream.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AdminEditComponent } from './components/admin-edit/admin-edit.component
     TruncatePipe,
     AdminViewComponent,
     AdminOneComponent,
-    AdminEditComponent
+    AdminEditComponent,
+    ViewStreamComponent
   ],
   imports: [
     BrowserModule,

@@ -10,5 +10,57 @@
 }
 
 .upper-padding {
-    padding-top: 3em;
+    padding-top: 4%;
+}
+
+.homeHeading {
+    background-color: black;
+    color: white;
+}
+
+.homePage {
+    margin-left: -15px;
+}
+
+.showImage {
+    width: 100%;
+    height: auto;
+}
+
+.side-image {
+    width: 100%;
+    height: auto;
+}
+
+ .side-blog-subject{
+    text-align: left;
+}
+
+.side-blog-link:hover .side-blog-title {
+    color: red;
+}
+
+.side-blog-title {
+    color: grey;
+}
+
+.blogColumn:hover .blogColumnContent {
+    background-color: #F0EFEF;
+}
+
+.showAuthor {
+    color: #BCBABA;
+}
+
+.showTitle{
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+.showStream {
+    color: #ED7C7C;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
 }

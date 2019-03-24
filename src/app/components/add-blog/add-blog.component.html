@@ -1,86 +1,80 @@
 <div class="upper-padding">
-<div class="container">
-  <div class="row">
-    <div class="col-md-offset-4 col-md-4">
-      <h2 style="text-align: center">
-        Competitive Exams Coding
-      </h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-4">
+        <h2 style="text-align: center">
+          Welcome To Geek1Vision
+        </h2>
+      </div>
+      <form [formGroup]="blogform" (ngSubmit)="text2Binary()">
+        <div class="col-md-offset-2 col-md-8 form-group">
+          <label for="title">Title:</label>
+          <input id="title" class="form-control" type="text" formControlName="title" name="title">
+          <div class="nav navbar-nav colorred navbar-left">
+            <p *ngIf="blogform.get('title').hasError('required') && (blogform.get('title').touched || blogform.get('title').dirty)">*Required
+              Field</p>
+          </div>
+        </div>
+
+        <div class="col-md-offset-2 col-md-8 form-group">
+
+          <label for="content">Content:</label>
+          <textarea id="content" class="form-control input-lg" rows="6" formControlName="content" name="content"></textarea>
+          <div class="nav navbar-nav colorred navbar-left">
+            <p *ngIf="blogform.get('content').hasError('required') && (blogform.get('content').touched || blogform.get('content').dirty)">*Required
+              Field</p>
+          </div>
+        </div>
+
+        <div class="col-md-offset-2 col-md-8 form-group">
+          <label for="image">Image:</label>
+          <input id="image" class="form-control" formControlName="image" name="image">
+        </div>
+
+        <div class="col-md-offset-2 col-md-8 form-group">
+          <label for="tags">Tags:</label>
+          <input id="tags" class="form-control" type="text" formControlName="tags" name="tags">
+          <div class="nav navbar-nav colorred navbar-left">
+            <p *ngIf="blogform.get('tags').hasError('required') && (blogform.get('tags').touched || blogform.get('tags').dirty)">*Required
+              Field</p>
+          </div>
+        </div>
+        <div class="col-md-offset-2 col-md-8 form-group">
+          <label for="subject">Subject:</label>
+          <input id="subject" class="form-control" type="text" formControlName="subject" name="subject">
+          <div class="nav navbar-nav colorred navbar-left">
+            <p *ngIf="blogform.get('subject').hasError('required') && (blogform.get('subject').touched || blogform.get('subject').dirty)">*Required
+              Field</p>
+          </div>
+        </div>
+        <div class="col-md-offset-2 col-md-8 form-group">
+          <label for="stream">Stream:</label>
+          <input id="stream" class="form-control" type="text" formControlName="stream" name="stream">
+          <div class="nav navbar-nav colorred navbar-left">
+            <p *ngIf="blogform.get('stream').hasError('required') && (blogform.get('stream').touched || blogform.get('stream').dirty)">*Required
+              Field</p>
+          </div>
+        </div>
+        <div class="col-md-offset-2 col-md-8 form-group">
+          <label for="author">Author:</label>
+          <input id="author" class="form-control" type="text" formControlName="author" name="author">
+          <div class="nav navbar-nav colorred navbar-left">
+            <p *ngIf="blogform.get('author').hasError('required') && (blogform.get('author').touched || blogform.get('author').dirty)">*Required
+              Field</p>
+          </div>
+        </div>
+        <div class="col-md-offset-2 col-md-8 form-group">
+          <label for="aboutAuthor">About Author:</label>
+          <input id="aboutAuthor" class="form-control" type="text" formControlName="aboutAuthor" name="aboutAuthor">
+          <div class="nav navbar-nav colorred navbar-left">
+            <p *ngIf="blogform.get('aboutAuthor').hasError('required') && (blogform.get('aboutAuthor').touched || blogform.get('aboutAuthor').dirty)">*Required
+              Field</p>
+          </div>
+        </div>
+        <div class="col-md-offset-2 col-md-8 form-group">
+          <button type="submit" class="btn btn-primary">Add Blog</button>
+        </div>
+      </form>
     </div>
-    <form [formGroup]="blogform" (ngSubmit)="text2Binary()">
-      <div class="col-md-offset-2 col-md-8 form-group">
-        <label for="title">Title:</label>
-        <input id="title" class="form-control" type="text" formControlName="title" name="title">
-        <div class="nav navbar-nav colorred navbar-left">
-          <p *ngIf="blogform.get('title').invalid && (blogform.get('title').touched && blogform.get('title').dirty) && !blogform.get('title').hasError('required')">
-            *Invalid Email</p>
-          <p *ngIf="blogform.get('title').hasError('required') && (blogform.get('title').touched || blogform.get('title').dirty)">*Required
-            Field</p>
-        </div>
-      </div>
-      <div class="col-md-offset-2 col-md-8 form-group">
-        <label for="content">Content:</label>
-        <textarea id="content" class="form-control input-lg" rows="6" formControlName="content" name="content"></textarea>
-        <div class="nav navbar-nav colorred navbar-left">
-          <p *ngIf="blogform.get('content').invalid && (blogform.get('content').touched && blogform.get('content').dirty) && !blogform.get('content').hasError('required')">
-            *Invalid Email</p>
-          <p *ngIf="blogform.get('content').hasError('required') && (blogform.get('content').touched || blogform.get('content').dirty)">*Required
-            Field</p>
-        </div>
-      </div>
-      <div class="col-md-offset-2 col-md-8 form-group">
-        <label for="tags">Tags:</label>
-        <input id="tags" class="form-control" type="text" formControlName="tags" name="tags">
-        <div class="nav navbar-nav colorred navbar-left">
-          <p *ngIf="blogform.get('tags').invalid && (blogform.get('tags').touched && blogform.get('tags').dirty) && !blogform.get('tags').hasError('required')">
-            *Invalid Email</p>
-          <p *ngIf="blogform.get('tags').hasError('required') && (blogform.get('tags').touched || blogform.get('tags').dirty)">*Required
-            Field</p>
-        </div>
-      </div>
-      <div class="col-md-offset-2 col-md-8 form-group">
-        <label for="subject">Subject:</label>
-        <input id="subject" class="form-control" type="text" formControlName="subject" name="subject">
-        <div class="nav navbar-nav colorred navbar-left">
-          <p *ngIf="blogform.get('subject').invalid && (blogform.get('subject').touched && blogform.get('subject').dirty) && !blogform.get('subject').hasError('required')">
-            *Invalid Email</p>
-          <p *ngIf="blogform.get('subject').hasError('required') && (blogform.get('subject').touched || blogform.get('subject').dirty)">*Required
-            Field</p>
-        </div>
-      </div>
-      <div class="col-md-offset-2 col-md-8 form-group">
-        <label for="stream">Stream:</label>
-        <input id="stream" class="form-control" type="text" formControlName="stream" name="stream">
-        <div class="nav navbar-nav colorred navbar-left">
-          <p *ngIf="blogform.get('stream').invalid && (blogform.get('stream').touched && blogform.get('stream').dirty) && !blogform.get('content').hasError('stream')">
-            *Invalid Email</p>
-          <p *ngIf="blogform.get('stream').hasError('required') && (blogform.get('stream').touched || blogform.get('stream').dirty)">*Required
-            Field</p>
-        </div>
-      </div>
-      <div class="col-md-offset-2 col-md-8 form-group">
-        <label for="author">Author:</label>
-        <input id="author" class="form-control" type="text" formControlName="author" name="author">
-        <div class="nav navbar-nav colorred navbar-left">
-          <p *ngIf="blogform.get('author').invalid && (blogform.get('author').touched && blogform.get('author').dirty) && !blogform.get('author').hasError('required')">
-            *Invalid Email</p>
-          <p *ngIf="blogform.get('author').hasError('required') && (blogform.get('author').touched || blogform.get('author').dirty)">*Required
-            Field</p>
-        </div>
-      </div>
-      <div class="col-md-offset-2 col-md-8 form-group">
-        <label for="aboutAuthor">About Author:</label>
-        <input id="aboutAuthor" class="form-control" type="text" formControlName="aboutAuthor" name="aboutAuthor">
-        <div class="nav navbar-nav colorred navbar-left">
-          <p *ngIf="blogform.get('aboutAuthor').invalid && (blogform.get('aboutAuthor').touched && blogform.get('aboutAuthor').dirty) && !blogform.get('aboutAuthor').hasError('required')">
-            *Invalid Email</p>
-          <p *ngIf="blogform.get('aboutAuthor').hasError('required') && (blogform.get('aboutAuthor').touched || blogform.get('aboutAuthor').dirty)">*Required
-            Field</p>
-        </div>
-      </div>
-      <div class="col-md-offset-2 col-md-8 form-group">
-        <button type="submit" class="btn btn-primary">Add Blog</button>
-      </div>
-    </form>
   </div>
-</div>
 </div>

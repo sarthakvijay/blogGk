@@ -22,6 +22,7 @@ export class AdminEditComponent implements OnInit {
     this.adminEditBlog = new FormGroup({
       title: new FormControl(''),
       content: new FormControl(''),
+      image: new FormControl(''),
       subject: new FormControl(''),
       tags: new FormControl(''),
       stream: new FormControl(''),
@@ -55,7 +56,6 @@ export class AdminEditComponent implements OnInit {
   }
 
   editBlogData(details) {
-    console.log(details.content);
     details.content = this.binary2String(details.content);
     this.adminEditBlog.patchValue(details);
   }
