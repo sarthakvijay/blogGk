@@ -6,6 +6,7 @@ import { ViewOneComponent } from './components/view-one/view-one.component';
 import { AdminViewComponent } from './components/admin-view/admin-view.component';
 import { AdminOneComponent } from './components/admin-one/admin-one.component';
 import { AdminEditComponent } from './components/admin-edit/admin-edit.component';
+import { ViewStreamComponent } from './components/view-stream/view-stream.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
   },
   {
     path: 'view-all',
+    component: ViewBlogComponent
+  },
+  {
+    path: '',
     component: ViewBlogComponent
   },
   {
@@ -31,6 +36,10 @@ const routes: Routes = [
   {
     path: 'admin-edit',
     component: AdminEditComponent
+  },
+  {
+    path: 'view-stream',
+    component: ViewStreamComponent
   }
 ];
 

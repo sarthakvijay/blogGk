@@ -3,69 +3,87 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-offset-1 col-md-11">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.geek1vision.com" target="_blank">
+      <div class=" col-md-12">
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{this.pageUrl}}" target="_blank">
           <i class="fab fa-facebook social-sides"></i>
         </a>
-        <a href=" http://www.linkedin.com/shareArticle?mini=true&url=http://www.geek1vision.com&title=Education-Blog&summary=Blog&source=http://www.geek1vision.com"
+        <!-- <a href=" http://www.linkedin.com/shareArticle?mini=true&url={{this.pageUrl}}&title={{blogOneData.stream}}&summary=Blog&source=http://www.geek1vision.com"
           target="_blank">
           <i class="fab fa-linkedin social-sides"></i>
-        </a>
-        <a href="https://twitter.com/share?text=Blog-For-Sciencr-Maths-Bio-Students@geek_1_vision%20via%20@sarthak_vijay&url=http://www.geek1vision.com"
+        </a> -->
+        <a href="https://twitter.com/share?text={{blogOneData.title}}@geek_1_vision%20via%20@sarthak_vijay&url={{this.pageUrl}}"
           target="_blank">
           <i class="fab fa-twitter social-sides"></i>
         </a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     </div>
 
-    <hr>
+
     <div class="row">
-      <div class="col-md-offset-1 col-md-8">
+      <div class="col-md-8">
+        <hr>
 
         <p class="blog-subject">{{blogOneData.subject}}</p>
         <p class="blog-title">{{blogOneData.title}}</p>
-        <p class="blog-content">{{blogOneData.content}}</p>
+        <p class="blog-content" [innerHTML]='blogOneData.content'></p>
         <p class="blog-tags"><i>Tags: </i> {{blogOneData.tags}}</p>
 
         <div class="col-md-8">
-          <p class="blog-author"></p>
           <p class="blog-author"><i>Author: </i>{{blogOneData.author}}</p>
           <p class="blog-aboutAuthor">{{blogOneData.aboutAuthor}}</p>
         </div>
         <div class="col-md-offset-1 col-md-2">
-          <img class="girl_face_emily" src='./../../../assets/images/girl_face_1.png'>
+          <img class="girl_face_emily" src='./../../../assets/images/boy_face_1.png'>
         </div>
 
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
+        <h2>Similar Posts</h2>
+        <hr>
         <div *ngFor='let details of blogOtherData | slice:0:4;'>
           <div class="blog-link side-blog-link">
-            <hr>
-            <a href="view-one?title={{details.title}}&id={{details.id}}">
-              <h4 class="side-blog-title">{{details.title}}</h4>
-              <h5 class="side-blog-content">{{details.content | limitTo: 80}}</h5>
-            </a>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="view-one?title={{details.title}}&id={{details.id}}">
+                  <img class="side-image" src={{details.image}}></a>
+              </div>
+              <div class="col-md-8">
+                <a href="view-one?title={{details.title}}&id={{details.id}}">
+                  <h5 class="side-blog-title">{{details.title}}</h5>
+                </a>
+                <h5 class="side-blog-stream">{{details.stream}}</h5>
+
+              </div>
+            </div>
+
+            <br>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<div>
-  <div class="container">
     <div class="row">
+      <div class="col-md-12">
+        <h3>Similar Posts</h3>
+      </div>
       <div *ngFor='let details of blogOtherData | slice:4:7; let i = index'>
-        <div class="col-md-offset-2 col-md-7 col-md-offset-3">
+
+        <div class="col-md-8">
           <hr>
+          <!-- <div class=""><img class="footer-blog-image" src={{details.image}}></div> -->
           <div class="blog-link footer-blog-link " *ngIf="i <3">
             <a href="view-one?title={{details.title}}&id={{details.id}}">
               <h4 class="footer-blog-title">{{details.title}}</h4>
-              <h5 class="footer-blog-content">{{details.content | limitTo: 150}}</h5>
             </a>
+            <h5 class="footer-blog-stream">{{details.stream}}</h5>
+            <h5> By: {{details.author}}</h5>
+
           </div>
         </div>
+        <div class="col-md-4"></div>
       </div>
     </div>
+
   </div>
 </div>

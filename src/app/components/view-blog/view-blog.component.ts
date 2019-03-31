@@ -3,6 +3,7 @@ import { BlogService } from './../../services/blog.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { ViewOneComponent } from './../view-one/view-one.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-view-blog',
@@ -17,7 +18,7 @@ export class ViewBlogComponent implements OnInit {
 
   blogAll: any;
   blogCalled: false;
-
+  blogAllFiltered: any;
   ngOnInit() {
     this.allBlog();
   }
@@ -30,13 +31,19 @@ export class ViewBlogComponent implements OnInit {
     this.blogService.allRatedBlogs().subscribe(
       data => {
         this.blogAll = data;
-        this.binary2String(this.blogAll);
+        // this.binary2String(this.blogAll);
       },
       error => {
         console.log('error occured');
         return false;
       }
     );
+  }
+
+  blogAllFilter(str): Observable<any> {
+    this.blogAllFiltered = this.blogAll.filter(e => e.stream === str);
+    console.log('hi i am here for loking');
+    return this.blogAllFiltered;
   }
 
   binary2String(blogAdmin) {
@@ -48,7 +55,7 @@ export class ViewBlogComponent implements OnInit {
         chr = parseInt(s.substr(i, 8), 2).toString(16);
         out += '%' + ((chr.length % 2 === 0) ? chr : '0' + chr);
       }
-      this.blogAll[a].content =  decodeURIComponent(out);
+      this.blogAll[a].content = decodeURIComponent(out);
     }
   }
 

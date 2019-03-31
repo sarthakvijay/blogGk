@@ -47,4 +47,48 @@
     color:black;
 }
 
+.blog-subject {
+    font-size: 18px;
+    color: #ED7C7C;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+.blog-title {
+    font-family: bodoni,serif;
+    font-size: 35px;
+    font-weight: 400;
+    letter-spacing: .03em;
+}
+
+.blog-content {
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: -.01em;
+    font-family: Karla,sans-serif;
+    text-align: justify;
+}
+
+.blog-tags {
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: -.01em;
+    font-family: Karla,sans-serif;
+    color: grey;
+}
+
+.girl_face_emily {
+    width: 100px;
+    height: 100px;
+}
+
+.image-article {
+    width: 80%;
+    height: 100%;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+
+
 

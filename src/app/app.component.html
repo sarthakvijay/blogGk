@@ -15,20 +15,21 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/view-all">Blogs <span class="sr-only">(current)</span></a></li>
-                <li><a href="/add">Add Blog</a></li>
+                <li><a href="/view-all">Home </a></li>
+                <li><a href="view-stream?stream=Engineering">Engineering</a></li>
+                <li><a href="view-stream?stream=Medical">Medical</a></li>
+                <li><a href="view-stream?stream=Competitive Exams">Competitive Exams</a></li>
+                <!-- <li><a href="/add">Add Blog</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                         aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Engineering</a></li>
-                        <li><a href="#">Medical</a></li>
+                        <li><a href="view-stream?stream=Engineering">Engineering</a></li>
+                        <li><a href="view-stream?stream=Medical">Medical</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Examp Preparation</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">All Exams</a></li>
+                        <li><a href="view-stream?stream=Competitive Exams">Competitive Exams</a></li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
 
             <form [formGroup]="subscribeForm" class="navbar-form navbar-right" (ngSubmit)=subscribeF()>
@@ -98,26 +99,24 @@
                 <div class="col-md-4 col-lg-4 col-xl-4">
                     <h6 class="footer-logo">Geek1Vision</h6>
                     <hr class="footer-long-lines">
-                    <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit
-                        amet,
-                        consectetur
-                        adipisicing elit.</p>
+                    <p></p>
                 </div>
 
                 <div class="col-md-2 col-lg-2 col-xl-2 footer-link">
                     <h6 class="text-uppercase">Categries</h6>
                     <hr class="footer-lines">
-                    <p><a href="#!">Engineering</a></p>
-                    <p><a href="#!">Medical</a></p>
-                    <p><a href="#!">All Exams</a></p>
+                    <p><a href="view-stream?stream=Engineering">Engineering</a></p>
+                    <p><a href="view-stream?stream=Medical">Medical</a></p>
+                    <p><a href="view-stream?stream=Competitive Exams">Competitive Exams</a></p>
                 </div>
 
                 <div class="col-md-3 col-lg-3 col-xl-3 footer-link">
                     <h6 class="text-uppercase">Useful links</h6>
                     <hr class="footer-lines">
-                    <p><a href="/add">Add Blog</a></p>
-                    <p><a href="/view-all">All Blogs</a></p>
+                    <!-- <p><a href="/add">Add Blog</a></p> -->
+                    <p><a href="/view-all">Blogs</a></p>
                     <p><a href="#subscribe">Subscribe</a></p>
+                    <p><a href="/add">Contribute</a></p>
                 </div>
 
                 <div class="col-md-3 col-lg-3 col-xl-3 footer-link">

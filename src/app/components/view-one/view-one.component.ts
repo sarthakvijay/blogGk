@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { BlogService } from './../../services/blog.service';
 import { ActivatedRoute } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-view-one',
@@ -12,17 +13,17 @@ export class ViewOneComponent implements OnInit {
   blogOneData: any;
   blogOtherData: any;
   requestedId: any;
-  // blogOneData = { 'title': '', 'id': '', 'content': '', 'author': '', 'aboutAuthor': '', 'tags': '', 'subject': '', 'stream': '' };
-  titleDecoded: 'iufuigd';
-  urlOfPage: 'vijay';
+  pageUrl: any;
   constructor(private blogService: BlogService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    @Inject(DOCUMENT) private document: Document) { }
   blogId: any;
 
   ngOnInit() {
     this.determineBlogId();
     this.blogData();
     this.allBlog();
+    this.pageUrl = this.document.location.href;
   }
 
   determineBlogId() {
@@ -49,10 +50,10 @@ export class ViewOneComponent implements OnInit {
     this.blogService.allRatedBlogs().subscribe(
       data => {
         this.blogOtherData = data;
-        for (let a = 0; a < this.blogOtherData.length; a++) {
-          const s = this.blogOtherData[a].content;
-          this.blogOtherData[a].content = this.binary2String(s);
-        }
+        // for (let a = 0; a < this.blogOtherData.length; a++) {
+        //   const s = this.blogOtherData[a].content;
+        //   this.blogOtherData[a].content = this.binary2String(s);
+        // }
       },
       error => {
         console.log('error occured');
