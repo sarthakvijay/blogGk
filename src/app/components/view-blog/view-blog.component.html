@@ -1,13 +1,137 @@
 <div class="upper-padding">
   <div class="container">
     <div class="row">
-      <div class="col-md-offset-2 col-md-8" *ngFor='let details of blogAll | slice:0:10; let odd = odd; let even = even;'>
-        <div [ngClass]="{ greybc: odd, bluebc: even }">
-          <h3 class="cntr">{{details.title}}</h3>
-          <p class="cntr">{{details.content | limitTo: 200}}<span (click)="blogread(details)">Read More</span></p>
-          <p class="lft">{{details.tags}}</p>
-          <p class="lft">{{details.author}}</p>
-          <p class="lft">{{details.aboutAuthor}}</p>
+      <div class="col-md-4">
+        <h2 class="">Popular Posts</h2>
+      </div>
+      <div class="col-md-8"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 homePage">
+        <div class="col-md-6" *ngFor='let details of blogAll | slice:0:2; let i = index;'>
+          <div *ngIf="i<2">
+            <div class="blogColumn">
+              <a href="view-one?title={{details.title}}&id={{details.id}}">
+                <img class="img-fluid showImage" src={{details.image}}></a>
+              <div class="blogColumnContent">
+                <p class="showStream">{{details.stream}}</p>
+                <a href="view-one?title={{details.title}}&id={{details.id}}">
+                  <h4 class="showTitle">{{details.title}}</h4>
+                </a>
+                <p class="showAuthor">{{details.author}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6" *ngFor='let details of blogAll | slice:2:4; let i = index;'>
+          <div *ngIf="i<2" class="blogColumn">
+            <div class="blogColumn">
+              <a href="view-one?title={{details.title}}&id={{details.id}}">
+                <img class="img-fluid showImage" src={{details.image}}></a>
+              <div class="blogColumnContent">
+                <p class="showStream">{{details.stream}}</p>
+                <a href="view-one?title={{details.title}}&id={{details.id}}">
+                  <h4 class="showTitle">{{details.title}}</h4>
+                </a>
+                <p class="showAuthor">{{details.author}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <h3>Similar Articles</h3>
+        <hr>
+        <div class="sideBlog" *ngFor='let details of blogAll | slice:4:8;'>
+          <div class="side-blog-link">
+            <div class="row">
+              <div class="col-md-4">
+                <a href="view-one?title={{details.title}}&id={{details.id}}">
+                  <img class="side-image" src={{details.image}}></a>
+              </div>
+              <div class="col-md-8">
+                <a href="view-one?title={{details.title}}&id={{details.id}}">
+                  <h5 class="side-blog-title">{{details.title}}</h5>
+                </a>
+                <h5 class="side-blog-author">
+                  {{details.subject}}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-4">
+        <h2>Engineering</h2>
+        <hr>
+        <div *ngFor="let details of blogAllFilter('Engineering') | slice:0:8; let i = index;">
+          <div *ngIf="i<2">
+            <a href="view-one?title={{details.title}}&id={{details.id}}">
+              <img class="showImage" src={{details.image}}></a>
+            <p class="showStream">{{details.stream}}</p>
+            <a href="view-one?title={{details.title}}&id={{details.id}}">
+              <h4 class="showTitle">{{details.title}}</h4>
+            </a>
+            <p class="showAuthor">{{details.author}}</p>
+          </div>
+          <div *ngIf="i>1">
+            <hr>
+            <a href="view-one?title={{details.title}}&id={{details.id}}">
+              <h4 class="showTitle">{{details.title}}</h4>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <h2>Medical</h2>
+        <hr>
+        <div *ngFor="let details of blogAllFilter('Medical') | slice:0:8; let i = index;">
+          <div *ngIf="i<2">
+            <a href="view-one?title={{details.title}}&id={{details.id}}">
+              <img class="showImage" src={{details.image}}></a>
+            <p class="showStream">{{details.stream}}</p>
+            <a href="view-one?title={{details.title}}&id={{details.id}}">
+              <h4 class="showTitle">{{details.title}}</h4>
+            </a>
+            <p class="showAuthor">{{details.author}}</p>
+          </div>
+          <div *ngIf="i>1">
+            <hr>
+            <a href="view-one?title={{details.title}}&id={{details.id}}">
+              <h4 class="showTitle">{{details.title}}</h4>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <h2>Competitive Exams</h2>
+        <hr>
+        <div *ngFor="let details of blogAllFilter('Competitive Exams') | slice:0:8; let i = index;">
+          <div *ngIf="i<2">
+            <a href="view-one?title={{details.title}}&id={{details.id}}">
+              <img class="showImage" src={{details.image}}></a>
+            <p class="showStream">{{details.stream}}</p>
+            <a href="view-one?title={{details.title}}&id={{details.id}}">
+              <h4 class="showTitle">{{details.title}}</h4>
+            </a>
+            <p class="showAuthor">{{details.author}}</p>
+          </div>
+          <div *ngIf="i>1">
+            <hr>
+            <a href="view-one?title={{details.title}}&id={{details.id}}">
+              <h4 class="showTitle">{{details.title}}</h4>
+            </a>
+          </div>
         </div>
       </div>
     </div>

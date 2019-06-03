@@ -1,0 +1,33 @@
+.rankBox {
+    background-color: #DEDEDE;
+    padding: 2em;
+}
+
+.rankArray {
+    background-color: #DEDEDE;
+    padding: 2em;
+}
+
+.upper-padding {
+    padding-top: 1em;
+}
+
+.color-red {
+    color: red;
+}
+
+.predictedRankArray{
+    background-color: #DEDEDE;
+    padding: 1em;
+}
+
+.josaaHeading {
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+    background-color: #DEDEDE;  
+}
+
+.josaadiv {
+    padding: 0.5em;    
+}

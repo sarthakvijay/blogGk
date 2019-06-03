@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="row">
+    <img class="contactUsImage" src="https://i.imgur.com/c8dUvDv.jpg">
+    <div class="col-md-8 contactForm">
+      <h3>Get in Touch</h3>
+      <form [formGroup]="contactForm">
+        <div class="form-group formFields">
+          <label for="name">Name</label>
+          <input class="form-control" type="text" formControlName="name" name="name" id="name">
+          <span class="nav colorred navbar-left">
+            <p *ngIf="contactForm.get('name').hasError('required') && (contactForm.get('name').touched || contactForm.get('name').dirty)">*Required
+              Field</p>
+          </span>
+        </div>
+        <div class="form-group formFields col-md-6">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" formControlName="email" name="email" id="email">
+          <div class="nav  colorred navbar-left">
+            <p *ngIf="contactForm.get('email').hasError('required') && (contactForm.get('email').touched || contactForm.get('email').dirty)">*Required
+              Field</p>
+          </div>
+        </div>
+        <div class="form-group formFields col-md-6">
+          <label for="mobile">Mobile Number</label>
+          <input class="form-control" formControlName="mobile" type="number" name="mobile" id="mobile">
+          <div class="nav colorred navbar-left">
+            <p *ngIf="contactForm.get('mobile').hasError('required') && (contactForm.get('mobile').touched || contactForm.get('mobile').dirty)">*Required
+              Field</p>
+          </div>
+        </div>
+        <div class="form-group formFields">
+          <label for="message">Message</label>
+          <textarea type="text" rows="5" class="form-control" formControlName="message" name="message" id="message"></textarea>
+          <div class="nav colorred navbar-left">
+            <p *ngIf="contactForm.get('mobile').hasError('required') && (contactForm.get('mobile').touched || contactForm.get('mobile').dirty)">*Required
+              Field</p>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <button type="button" class="btn btn-primary" (click)="emailContactForm()">Send Message</button>
+        </div>
+        <div class="form-group col-md-6">
+          <h4>{{mailErrors}}</h4>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-4">
+      <div class="connectWithUs">
+        <h3>Connect with us: </h3>
+        <br>
+        <p>For Support or any Question Email Us at:
+          <br>Contact@geek1vision.com</p>
+      </div>
+      <div class="emailForm">
+        <h3>Subscribe to Emails</h3>
+        <form [formGroup]="subscribeForm" class="navbar-form" (ngSubmit)=subscribeFor()>
+          <div class="form-group">
+            <input type="text" formControlName="email" class="form-control" placeholder="myemail@gmail.com">
+            <div class="nav navbar-nav colorred navbar-left">
+              <p *ngIf="subscribeForm.get('email').invalid && (subscribeForm.get('email').touched && subscribeForm.get('email').dirty) && !subscribeForm.get('email').hasError('required')">
+                *Invalid Email</p>
+              <p *ngIf="subscribeForm.get('email').hasError('required') && (subscribeForm.get('email').touched || subscribeForm.get('email').dirty)">*Required
+                Field</p>
+            </div>
+          </div>
+          <div class="form-group dropdown">
+            <button href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false"><span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li class="form-check text-center">
+                <input type="checkbox" formControlName="jee" class="form-check-input" id="jee" checked>
+                <label class="form-check-label" for="jee">Engineering</label>
+              </li>
+              <li class="form-check text-center">
+                <input type="checkbox" formControlName="medical" class="form-check-input" id="medical" checked>
+                <label class="form-check-label" for="medical">Medical</label>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li class="form-check text-center">
+                <input type="checkbox" formControlName="exams" class="form-check-input" id="exams" checked>
+                <label class="form-check-label" for="exams">Exams</label>
+              </li>
+            </ul>
+          </div>
+          <button type="submit" class="btn btn-default">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="connectUsingSocial">
+        <br>
+        <h5>
+          You can also connect with us through our Social Media channels.
+          Link for same are below.
+        </h5>
+      </div>
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="upper-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <h2 class="alignCenter pad5">{{streamName}}</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div *ngFor="let details of blogAllFilter(); let i = index;">
+        <div class="col-md-4" *ngIf="i%3==0">
+          <div class="blogColumn">
+            <a href="view-one?title={{details.title}}&id={{details.id}}">
+              <img class="img-fluid showImage" src={{details.image}}></a>
+            <div class="blogColumnContent">
+              <p class="showStream">{{details.stream}}</p>
+              <a href="view-one?title={{details.title}}&id={{details.id}}">
+                <h4 class="showTitle">{{details.title}}</h4>
+              </a>
+              <p class="showAuthor">{{details.author}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4" *ngIf="i%3==1">
+          <div class="blogColumn">
+            <a href="view-one?title={{details.title}}&id={{details.id}}">
+              <img class="img-fluid showImage" src={{details.image}}></a>
+            <div class="blogColumnContent">
+              <p class="showStream">{{details.stream}}</p>
+              <a href="view-one?title={{details.title}}&id={{details.id}}">
+                <h4 class="showTitle">{{details.title}}</h4>
+              </a>
+              <p class="showAuthor">{{details.author}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="i%3==2" class="col-md-4">
+          <div class="blogColumn">
+            <a href="view-one?title={{details.title}}&id={{details.id}}">
+              <img class="img-fluid showImage" src={{details.image}}></a>
+            <div class="blogColumnContent">
+              <p class="showStream">{{details.stream}}</p>
+              <a href="view-one?title={{details.title}}&id={{details.id}}">
+                <h4 class="showTitle">{{details.title}}</h4>
+              </a>
+              <p class="showAuthor">{{details.author}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
