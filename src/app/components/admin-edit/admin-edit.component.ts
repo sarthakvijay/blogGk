@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BlogService } from './../../services/blog.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-edit',
@@ -11,7 +11,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class AdminEditComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
-    private blogService: BlogService) { }
+    private blogService: BlogService,
+    private router: Router) { }
 
   requestedId: any;
   blogOneData: any;
@@ -22,11 +23,13 @@ export class AdminEditComponent implements OnInit {
     this.adminEditBlog = new FormGroup({
       title: new FormControl(''),
       content: new FormControl(''),
+      image: new FormControl(''),
       subject: new FormControl(''),
       tags: new FormControl(''),
       stream: new FormControl(''),
       author: new FormControl(''),
       aboutAuthor: new FormControl(''),
+      days: new FormControl(''),
       rating: new FormControl('')
     });
 
@@ -37,7 +40,6 @@ export class AdminEditComponent implements OnInit {
   determineBlogId() {
     this.activatedRoute.queryParams.subscribe(params => {
       this.requestedId = params['id'];
-      console.log(this.requestedId);
     });
   }
 
@@ -55,7 +57,6 @@ export class AdminEditComponent implements OnInit {
   }
 
   editBlogData(details) {
-    console.log(details.content);
     details.content = this.binary2String(details.content);
     this.adminEditBlog.patchValue(details);
   }
@@ -63,8 +64,20 @@ export class AdminEditComponent implements OnInit {
   addRatedBlog() {
     this.blogService.addRatedBlogs(this.adminEditBlog.value).subscribe(
       (res) => {
-        console.log(res);
-        this.adminEditBlog.reset();
+        this.deleteBlog();
+        this.router.navigate(['/']);
+      },
+      error => {
+        console.log('error occured');
+        return false;
+      }
+    );
+  }
+
+  deleteBlog() {
+    this.blogService.deleteRatedBlog(this.requestedId).subscribe(
+      (res) => {
+        // console.log(res.body);
       },
       error => {
         console.log('error occured');

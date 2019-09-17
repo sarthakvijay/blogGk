@@ -1,0 +1,17 @@
+.contactUsImage {
+    width: 100%;
+    height: auto;
+}
+
+.colorred {
+    color: red;
+    font-size: 12px;
+} 
+
+.formFields {
+    margin-bottom: 2em;
+}
+
+.contactForm{
+    border-right: 1px solid #5f5c5c;
+}

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BlogService } from './services/blog.service';
 import { OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -23,13 +24,12 @@ export class AppComponent implements OnInit {
     });
   }
 
-  subscribeF() {
-    this.blogService.validateForm(this.subscribeForm);
-    if (this.subscribeForm.valid) {
-      console.log(this.subscribeForm.value);
-      this.blogService.addingEmail(this.subscribeForm.value).subscribe(
+  subscribeF(subscribeForm: FormGroup): boolean {
+    this.blogService.validateForm(subscribeForm);
+    if (subscribeForm.valid) {
+      this.blogService.addingEmail(subscribeForm.value).subscribe(
         data => {
-          this.subscribeForm.reset();
+          subscribeForm.reset();
           return true;
         },
         error => {
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
         }
       );
     } else {
-      console.log('Email subscription form is invalid');
+      return false;
     }
   }
 }

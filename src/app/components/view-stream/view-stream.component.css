@@ -1,0 +1,42 @@
+.upper-padding {
+    padding-top: 3em;
+}
+
+.showImage {
+    height: 100%;
+    width: 100%;
+}
+
+.alignCenter {
+    text-align: center;
+    text-decoration-style: solid;
+}
+
+.pad5 {
+    padding-bottom: 5px;
+}
+
+.blogLink:hover .blogShow {
+    text-decoration: none;
+}
+
+.blogColumn:hover .blogColumnContent {
+    background-color: #F0EFEF;
+}
+
+.showAuthor {
+    color: #BCBABA;
+}
+
+.showTitle{
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+.showStream {
+    color: #ED7C7C;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}

@@ -64,3 +64,11 @@
      text-decoration: none;
      font-size: 20px;
  }
+
+ .marginleft {
+     margin-left: 1em;
+ }
+
+ .upperPadding {
+    padding-top: 4%;
+ }

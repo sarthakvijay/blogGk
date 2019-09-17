@@ -2,11 +2,20 @@
 
   <div class="row">
     <div class="col-md-offset-1 col-md-8">
-      <h2>{{blogOneData.title}}</h2>
-      <h2>{{blogOneData.content}}</h2>
-      <h2>{{blogOneData.tags}}</h2>
-      <h2>{{blogOneData.subject}}</h2>
-      <h2>{{blogOneData.author}}</h2>
+      <p class="blog-subject">{{blogOneData.subject}}</p>
+      <p class="blog-title">{{blogOneData.title}}</p>
+      <p class="blog-content" [innerHTML]="blogOneData.content"></p>
+
+      <p class="blog-tags"><i>Tags: </i> {{blogOneData.tags}}</p>
+
+      <div class="col-md-8">
+        <p class="blog-author"></p>
+        <p class="blog-author"><i>Author: </i>{{blogOneData.author}}</p>
+        <p class="blog-aboutAuthor">{{blogOneData.aboutAuthor}}</p>
+      </div>
+      <div class="col-md-offset-1 col-md-2">
+        <img class="girl_face_emily" src='./../../../assets/images/girl_face_1.png'>
+      </div>
     </div>
     <div class="col-md-3">
       <button class="btn" (click)="blogRating()">Give Rating</button>

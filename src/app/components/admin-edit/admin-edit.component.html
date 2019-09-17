@@ -10,13 +10,17 @@
         <div class="col-md-offset-2 col-md-8 form-group">
           <label for="title">Title:</label>
           <input id="title" class="form-control" type="text" formControlName="title" name="title">
-
         </div>
         <div class="col-md-offset-2 col-md-8 form-group">
           <label for="content">Content:</label>
           <textarea id="content" class="form-control input-lg" rows="6" formControlName="content" name="content"></textarea>
-
         </div>
+
+        <div class="col-md-offset-2 col-md-8 form-group">
+          <label for="image">Image:</label>
+          <input id="image" class="form-control input-lg" formControlName="image" name="image">
+        </div>
+
         <div class="col-md-offset-2 col-md-8 form-group">
           <label for="tags">Tags:</label>
           <input id="tags" class="form-control" type="text" formControlName="tags" name="tags">
@@ -27,7 +31,11 @@
         </div>
         <div class="col-md-offset-2 col-md-8 form-group">
           <label for="stream">Stream:</label>
-          <input id="stream" class="form-control" type="text" formControlName="stream" name="stream">
+          <select class="form-control" type="text" formControlName="stream" name="stream">
+            <option>Engineering</option>
+            <option>Medical</option>
+            <option>Competitive Exams</option>
+          </select>
 
         </div>
         <div class="col-md-offset-2 col-md-8 form-group">
@@ -40,6 +48,10 @@
           <input id="aboutAuthor" class="form-control" type="text" formControlName="aboutAuthor" name="aboutAuthor">
         </div>
         <div class="col-md-offset-2 col-md-8 form-group">
+          <label for="days">Number of Days:</label>
+          <input id="days" class="form-control" type="number" formControlName="days" name="days">
+        </div>
+        <div class="col-md-offset-2 col-md-8 form-group">
           <label for="rating">Rate:</label>
           <input id="rating" class="form-control" type="number" formControlName="rating" name="rating">
         </div>
@@ -50,4 +62,3 @@
     </div>
   </div>
 </div>
-

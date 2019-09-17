@@ -45,7 +45,7 @@ export class AdminOneComponent implements OnInit {
   }
 
   blogRating() {
-    this.router.navigate(['admin-edit'], { queryParams: {  id: this.requestedId } });
+    this.router.navigate(['admin-edit'], { queryParams: { id: this.requestedId } });
   }
 
   binary2String(s) {

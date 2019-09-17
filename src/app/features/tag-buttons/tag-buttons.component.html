@@ -1,0 +1,51 @@
+<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+
+  <!-- Heading Buttons -->
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+    <button type="button" class="btn btn-primary" (click)="insertAtCursorA('<h1></h1>')">H1</button>
+    <button type="button" class="btn btn-primary" (click)="insertAtCursorA('<h2></h2>')">H2</button>
+    <button type="button" class="btn btn-primary" (click)="insertAtCursorA('<h3></h3>')">H3</button>
+    <button type="button" class="btn btn-primary" (click)="insertAtCursorA('<h4></h4>')">H4</button>
+    <button type="button" class="btn btn-primary" (click)="insertAtCursorA('<h5></h5>')">H5</button>
+    <button type="button" class="btn btn-primary" (click)="insertAtCursorA('<h6></h6>')">H6</button>
+  </div>
+
+  <div class="btn-group" role="group" aria-label="Second group">
+    <button type="button" class="btn btn-primary" (click)="insertAtCursorA('<p></p>')">Para</button>
+    <button type="button" class="btn btn-primary" (click)="insertAtCursorA('<img src=>')">Img</button>
+    <button type="button" class="btn btn-primary" (click)="insertAtCursorA('<a href=></a>')">Link</button>
+    <button type="button" class="btn btn-primary" (click)="insertAtCursorA('<b></b>')">Bold</button>
+    <button type="button" class="btn btn-primary" (click)="insertAtCursorA('<i></i>')">Italics</button>
+    <button type="button" class="btn btn-primary" (click)="insertAtCursorA('<hr>')">Horizonal Line</button>
+  </div>
+</div>
+
+<br>
+<div>
+  <!-- Table -->
+  <button type="button" class="btn btn-primary" (click)="insertAtCursorA('<table>
+        <thead>
+          <tr>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th></th>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>')">Table</button>
+
+  <!-- Ordered List -->
+  <button type="button" class="btn btn-primary" (click)="insertAtCursorA('<ol>
+        <li></li>
+      </ol>')">Ordered
+    List</button>
+
+  <button type="button" class="btn btn-primary" (click)="insertAtCursorA('<ul>
+          <li></li>
+        </ul>')">Unordered
+    List</button>
+
+</div>

@@ -1,0 +1,287 @@
+<div class="container">
+  <div class="row">
+
+    <h2>JOSAA Counseling</h2>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="jeeadvance-tab" data-toggle="tab" href="#jeeadvance" role="tab" aria-controls="jeeadvance"
+          aria-selected="true">JEE-Advance</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="jeemains-tab" data-toggle="tab" href="#jeemains" role="tab" aria-selected="false">JEE-Mains</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="tab-content" id="myTabContent">
+
+  <div class="tab-pane fade" id="jeemains" role="tabpanel" aria-labelledby="jeemains-tab">
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-md-offset-3 josaadiv">
+          <h3 class="josaaHeading">
+            JOSAA-MAINS Counseling
+          </h3>
+        </div>
+
+        <div class="col-md-6">
+          <div class="col-md-12 ">
+            <h3>Jee Main 2019 Rank Predictor</h3>
+            <h4>Enter Exam Details</h4>
+          </div>
+          <div class="col-md-12 rankBox">
+            <form [formGroup]="rankForm">
+              <div class="form-group col-md-6">
+                <label for="applicationNumber">Application Number</label>
+                <input type="number" class="form-control" formControlName="applicationNumber" name="applicationNumber"
+                  id="applicationNumber">
+              </div>
+              <!-- <div class="form-group col-md-6">
+          <label for="dateOfBirth">Date Of Birth</label>
+          <div class="input-group date" data-provide="datepicker">
+            <input type="text" class="form-control" formControlName="dateOfBirth" name="dateOfBirth" id="dateOfBirth">
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-th"></span>
+            </div>
+          </div>
+        </div> -->
+              <div class="form-group col-md-6">
+                <label for="percentileScore">Max Percentile Score</label>
+                <input type="number" class="form-control" id="percentileScore" formControlName="percentileScore" name="percentileScore">
+                <span class="err-msg color-red select-err" *ngIf="rankForm.get('percentileScore').invalid && rankForm.get('percentileScore').touched">Invalid
+                  percentileScore</span>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="category">Category</label>
+                <select class="form-control" formControlName="category" name="category" id="category">
+                  <option>Gen</option>
+                  <option>OBC-NCL</option>
+                  <option>SC</option>
+                  <option>ST</option>
+                  <option>PWD</option>
+                  <option>OBCPWD</option>
+                  <option>SCPWD</option>
+                  <option>STPWD</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="passingYear">12th Passing Year </label>
+                <select class="form-control" formControlName="passingYear" name="passingYear" id="passingYear">
+                  <option>2017</option>
+                  <option>2018</option>
+                  <option>2019</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+              </div>
+
+              <div class="form-group col-md-12">
+                <button type="submit" class="btn btn-primary" (click)="rankCalcultorMains()">Submit</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-md-12" *ngIf="rankArray">
+            <h3 class="predictedRankArray">
+              {{rankArray}}
+            </h3>
+          </div>
+
+        </div>
+
+        <div class="col-md-6">
+          <div class="col-md-12 ">
+            <h3>JOSAA JEE-MAINS</h3>
+            <h4> Available Branches</h4>
+          </div>
+          <div class="col-md-12 rankArray">
+            <form [formGroup]="rankArrayForm">
+              <div class="form-group col-md-6">
+                <label for="lowerRank">Rank-</label>
+                <span class="color-red" *ngIf="rankArrayForm.get('lowerRank').invalid && rankArrayForm.get('lowerRank').touched">
+                  Invalid Rank</span>
+                <input type="number" class="form-control" formControlName="lowerRank" name="lowerRank" id="lowerRank">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="higherRank">Rank+</label>
+                <input type="number" class="form-control" formControlName="higherRank" name="higherRank" id="higherRank">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="category">Category</label>
+                <select class="form-control" formControlName="category" name="category" id="category">
+                  <option>OPEN</option>
+                  <option>OBC-NCL</option>
+                  <option>SC</option>
+                  <option>ST</option>
+                  <option>PWD</option>
+                  <option>OBC-NCL (PWD)</option>
+                  <option>SC (PWD)</option>
+                  <option>ST (PwD)</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="gender">Gender</label>
+                <select class="form-control" formControlName="gender" name="gender" id="gender">
+                  <option>Female-Only</option>
+                  <option>Gender-Neutral</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-12">
+                <label for="institute">Institute Name</label>
+                <select class="form-control" formControlName="institute" name="institute" id="institute">
+                  <option value="*">All</option>
+                  <option *ngFor="let institute of josaaInstituteNames">{{institute}}</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="quote">Alloted_Quote</label>
+                <select class="form-control" formControlName="quote" name="quote" id="quote">
+                  <option value="AI">All India</option>
+                  <option value="HS">Home State</option>
+                  <option value="OS">Other State</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-12">
+                <button type="submit" class="btn btn-primary" (click)="branchAvailableMains()">Submit</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-12 upper-padding">
+          <table *ngIf="branchesAvailable" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Institute Name</th>
+                <th>Branch Name</th>
+                <th>Category</th>
+                <th>Seat Pool</th>
+                <th>Quote</th>
+                <th>Opening</th>
+                <th>Closing</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let branches of branchesAvailable | paginate: { id: 'jeemainspaginator', itemsPerPage: 10, currentPage: p }">
+                <td>{{branches.institute_Name}}</td>
+                <td>{{branches.branch_Name}}</td>
+                <td>{{branches.category}}</td>
+                <td>{{branches.seat_Pool}}</td>
+                <td>{{branches.alloted_Quote}}</td>
+                <td>{{branches.opening}}</td>
+                <td>{{branches.closing}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <pagination-controls id="jeemainspaginator" (pageChange)="p = $event"></pagination-controls>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="tab-pane fade" id="jeeadvance" role="tabpanel" aria-labelledby="jeeadvance-tab">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 josaadiv">
+          <h3 class="josaaHeading">
+            JOSAA JEE-ADVANCED Counseling
+          </h3>
+          <div class="col-md-12 ">
+            <h4>Available Branches</h4>
+          </div>
+          <div class="col-md-12 rankArray">
+            <form [formGroup]="rankAdvanceArrayForm">
+              <div class="form-group col-md-6">
+                <label for="lowerRank">Rank-</label>
+                <span class="color-red" *ngIf="rankAdvanceArrayForm.get('lowerRank').invalid && rankAdvanceArrayForm.get('lowerRank').touched">
+                  Invalid Rank</span>
+                <input type="number" class="form-control" formControlName="lowerRank" name="lowerRank" id="lowerRank">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="higherRank">Rank+</label>
+                <input type="number" class="form-control" formControlName="higherRank" name="higherRank" id="higherRank">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="category">Category</label>
+                <select class="form-control" formControlName="category" name="category" id="category">
+                  <option>OPEN</option>
+                  <option>OBC-NCL</option>
+                  <option>SC</option>
+                  <option>ST</option>
+                  <option>PWD</option>
+                  <option>OBC-NCL (PWD)</option>
+                  <option>SC (PWD)</option>
+                  <option>ST (PwD)</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="gender">Gender</label>
+                <select class="form-control" formControlName="gender" name="gender" id="gender">
+                  <option>Female-Only</option>
+                  <option>Gender-Neutral</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-12">
+                <label for="institute">Institute Name</label>
+                <select class="form-control" formControlName="institute" name="institute" id="institute">
+                  <option value="*">All</option>
+                  <option *ngFor="let institute of josaaIitInstituteNames">{{institute}}</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-12">
+                <button type="submit" class="btn btn-primary" (click)="branchAvailableAdvance()">Submit</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-12 upper-padding">
+          <table *ngIf="branchesAvailable" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Institute Name</th>
+                <th>Branch Name</th>
+                <th>Category</th>
+                <th>Seat Pool</th>
+                <th>Quote</th>
+                <th>Opening</th>
+                <th>Closing</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let branches of branchesAvailable | paginate: { id: 'jeeadvancepaginator', itemsPerPage: 10, currentPage: k }">
+                <td>{{branches.institute_Name}}</td>
+                <td>{{branches.branch_Name}}</td>
+                <td>{{branches.category}}</td>
+                <td>{{branches.seat_Pool}}</td>
+                <td>{{branches.alloted_Quote}}</td>
+                <td>{{branches.opening}}</td>
+                <td>{{branches.closing}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <pagination-controls id="jeeadvancepaginator" (pageChange)="k = $event"></pagination-controls>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

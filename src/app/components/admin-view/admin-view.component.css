@@ -1,14 +1,37 @@
-.cntr {
-    text-align: center;
-}
-.greybc {
-    background-color: azure;
-}
-
-.bluebc {
-    background-color: beige;
-}
-
 .upper-padding {
     padding-top: 3em;
 }
+
+.showAuthor {
+    color: #BCBABA;
+}
+
+.showViewTitle{
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.showStream {
+    color: #ED7C7C;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.showImage {
+    width: 100%;
+    height: auto;
+}
+
+.editIcon {
+    font-size: 20px;
+    padding-right: 1em;
+}
+
+.trashIcon {
+    font-size: 20px;
+}
+
+  
