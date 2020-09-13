@@ -24,6 +24,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { CounsellingComponent } from './features/counseling/counselling/counselling.component';
 import { RankCalculatorComponent } from './features/counseling/rank-calculator/rank-calculator.component';
 import { NgxPaginationModule } from './../../node_modules/ngx-pagination';
+import { httpInterceptorProviders } from './auth/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { NgxPaginationModule } from './../../node_modules/ngx-pagination';
     ReactiveFormsModule,
     NgxPaginationModule
   ],
-  providers: [BlogService, ViewOneComponent, AdminOneComponent, AuthGuard, AddBlogComponent],
+  providers: [BlogService, ViewOneComponent, AdminOneComponent, AuthGuard, AddBlogComponent, httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
