@@ -23,7 +23,7 @@
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "ngx-pagination": "^3.2.1",
     "open-iconic": "^1.1.1",
     "rxjs": "~6.3.3",
